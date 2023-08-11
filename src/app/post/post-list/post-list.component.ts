@@ -9,5 +9,6 @@ export class PostListComponent {
   @Input() fromPost: string = '';
   @Input() secondPost: string = '';
 
+  forParent: string = 'Message from the child';
     
 }
