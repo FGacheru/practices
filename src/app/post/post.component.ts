@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, Input, ViewChild, AfterViewInit, EventEmitter, Output } from '@angular/core';
 import { PostListComponent } from './post-list/post-list.component';
 
 @Component({
@@ -10,6 +10,7 @@ export class PostComponent implements AfterViewInit {
   fromPost: string = 'This message is from the post component';
   receivedMessage: string = '';
   message: string = '';
+  name: string = 'Gacheru';
   @Input() fromParent: string = '';
 
   post: string = 'Second message from post';
@@ -27,4 +28,12 @@ export class PostComponent implements AfterViewInit {
   parentGreet(name: string) {
     alert("Hello " + name);
   }
+
+  @Output() secondGreeting = new EventEmitter<string>();
+
+  callParentEvent() {
+    this.secondGreeting.emit(this.name)
+  }
+
+  
 }

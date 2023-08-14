@@ -1,4 +1,5 @@
-<h1>{{title}}</h1>
+<h1 [class.text-color] = "bool">{{title}}</h1>
 <app-navbar></app-navbar>
-<app-post [fromParent]='parentMessage'></app-post>
+<app-post (secondGreeting)="greeting($event)" [fromParent]='parentMessage'></app-post>
 <h2>{{postMessage}}</h2>
+<button (click)="message()">Click</button>
