@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-post-list',
@@ -6,8 +6,21 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./post-list.component.scss'],
 })
 export class PostListComponent {
-  @Input() fromPost: string = '';
+  name: string = 'Gacheru';
   @Input() secondPost: string = '';
+  
+  // @Output() customEvent = new EventEmitter<string>();
 
+  @Output() greet = new EventEmitter<string>();
+
+  callParentEvent() {
+    this.greet.emit(this.name);
+  }
+
+  // emitEvent() {
+  //   this.customEvent.emit('Event from the child component');
+  // }
+
+  forParent: string = 'Message from the child';
     
 }
