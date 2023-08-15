@@ -24,4 +24,11 @@ export class AppComponent implements AfterViewInit {
   greeting(name: string) {
     alert('Hawayu ' + name);
   }
+  onKeyup(user: string){
+    // if($event.keyCode == 13){
+      console.log(user);
+
+    // }
+
+  }
 }
