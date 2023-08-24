@@ -16,13 +16,16 @@
 <p>Change Detection</p>
 <button (click)="addNew()">Add new Data</button>
 
-<div *ngIf="objArray.length > 0">
+<div *ngIf="objArray.length > 0; then postList else noData">
+</div>
+<ng-template #postList>
     <h3>Fetching Object Array</h3>
     <p *ngFor="let post of objArray; let i = index">{{ post.postTitle }}
         <button (click)="onDelete(i)">Delete</button>
     </p>
-</div>
-<div *ngIf="objArray.length <= 0">
+</ng-template>
+<ng-template #noData>
     <p>There is no Data to fetch...</p>
-</div>
+</ng-template>
+
 <app-post-form></app-post-form>
