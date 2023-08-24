@@ -14,5 +14,10 @@
 <p *ngFor="let post of postArray">{{ post }}</p>
 
 <h3>Fetching Object Array</h3>
-<p *ngFor="let post of objArray">{{ post.postTitle }}</p>
+<p *ngFor="let post of objArray; let i = index">{{ post.postTitle }}
+    <button (click)="onDelete(i)">Delete</button>
+</p>
+<p>Change Detection</p>
+<button (click)="addNew()">Add new Data</button>
+
 <app-post-form></app-post-form>
