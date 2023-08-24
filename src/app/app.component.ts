@@ -13,7 +13,13 @@ export class AppComponent implements AfterViewInit {
   postMessage: string = '';
 
   postArray: Array<string> = ['Post 1', 'Post 2', 'Post 3', 'Post 4']
+  objArray: Array<any> = [
+    {id:1, postTitle: 'Post 1'},
+    {id:1, postTitle: 'Post 1'},
+    {id:1, postTitle: 'Post 1'},
+    {id:1, postTitle: 'Post 1'},
 
+  ]
   @ViewChild(PostComponent) postComp!: PostComponent;
 
   ngAfterViewInit() {
