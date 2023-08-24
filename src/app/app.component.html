@@ -13,11 +13,16 @@
 
 <p *ngFor="let post of postArray">{{ post }}</p>
 
-<h3>Fetching Object Array</h3>
-<p *ngFor="let post of objArray; let i = index">{{ post.postTitle }}
-    <button (click)="onDelete(i)">Delete</button>
-</p>
 <p>Change Detection</p>
 <button (click)="addNew()">Add new Data</button>
 
+<div *ngIf="objArray.length > 0">
+    <h3>Fetching Object Array</h3>
+    <p *ngFor="let post of objArray; let i = index">{{ post.postTitle }}
+        <button (click)="onDelete(i)">Delete</button>
+    </p>
+</div>
+<div *ngIf="objArray.length <= 0">
+    <p>There is no Data to fetch...</p>
+</div>
 <app-post-form></app-post-form>
