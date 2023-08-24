@@ -5,5 +5,10 @@
 <h2>{{postMessage}}</h2>
 <button (click)="message()">Click</button>
 <input type="text" (keyup.enter)="onKeyup(users.value )" #users> -->
+<p>{{postArray.at(0)}}</p>
+<p>{{postArray.at(1)}}</p>
+<p>{{postArray.at(2)}}</p>
+<p>{{postArray.at(3)}}</p>
 
+<p *ngFor="let post of postArray">{{post}}</p>
 <app-post-form></app-post-form>

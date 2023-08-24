@@ -12,6 +12,8 @@ export class AppComponent implements AfterViewInit {
   parentMessage: string = 'Message Changed';
   postMessage: string = '';
 
+  postArray: Array<string> = ['Post 1', 'Post 2', 'Post 3', 'Post 4']
+
   @ViewChild(PostComponent) postComp!: PostComponent;
 
   ngAfterViewInit() {
@@ -30,5 +32,12 @@ export class AppComponent implements AfterViewInit {
 
     // }
 
+  }
+
+  constructor(){
+    for(let i = 0; i < this.postArray.length; i++ ){
+      console.log(this.postArray.at(i));
+      
+    }
   }
 }
